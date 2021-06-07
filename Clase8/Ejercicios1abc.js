@@ -10,11 +10,15 @@ function dividirNumeros(dividendo, divisor) {
 function dividirNumeros(dividendo, divisor) {
     return new Promise(function(resolve, reject) {
         try {
-            setTimeout( () => {
-                resolve(dividendo/divisor);
+            if (isFinite(dividendo/divisor)) {
+                setTimeout( () => {
+                    resolve(dividendo/divisor);
             }, 3000); // está en milisegundos so 3s --> 3000ms
+            } else {
+                reject("No se puede dividir por 0")
+            }
         } catch (error) {
-            reject(error);
+            reject(error)
         }
     }
     )
@@ -26,7 +30,7 @@ function dividirNumeros(dividendo, divisor) {
 
 
 function programa() {
-    let promesa = dividirNumeros(4,2);
+    let promesa = dividirNumeros(4,0);
     promesa.then((resultadoFinal) => { // arrowm function () => { }
             console.log("El resultado con .then-.cacht es: " + resultadoFinal);
         }
