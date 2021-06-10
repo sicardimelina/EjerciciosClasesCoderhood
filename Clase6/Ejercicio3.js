@@ -10,7 +10,7 @@ const jugadores = [
     { ID: "3", clase: "espadachin", nivel: 36, inventario: ["Casco de hierro", "Katana de fuego", "Pocíón de velocidad"] },
     { ID: "5", clase: "mago", nivel: 26, inventario: ["Carta de PecoPeco", "Oridecon", "Poción de concentración"] },
 ]
-let idJugador = 0
+
 let usuariosBaneados = jugadores.filter(
     function(jugador) {
         return jugador.inventario.includes("Katana de fuego")
@@ -22,4 +22,3 @@ let usuariosBaneados = jugadores.filter(
 )
 
 console.log(usuariosBaneados)
-// .inventario.includes("Katana de fuego") == true
